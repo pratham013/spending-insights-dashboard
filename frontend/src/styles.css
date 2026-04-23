@@ -14,16 +14,16 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #06101f;
-  --panel: rgba(10, 20, 36, 0.86);
-  --panel-strong: #0f172a;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --border: rgba(148, 163, 184, 0.18);
-  --accent: #60a5fa;
-  --accent-2: #34d399;
-  --accent-soft: rgba(96, 165, 250, 0.14);
-  --shadow: 0 24px 60px rgba(2, 6, 23, 0.4);
+  --bg: #07111f;
+  --panel: rgba(11, 19, 32, 0.94);
+  --panel-strong: #111c30;
+  --text: #f3f7ff;
+  --muted: #b1bfd5;
+  --border: rgba(148, 163, 184, 0.2);
+  --accent: #7cb4ff;
+  --accent-2: #59e0c2;
+  --accent-soft: rgba(124, 180, 255, 0.14);
+  --shadow: 0 24px 60px rgba(2, 6, 23, 0.52);
 }
 
 * {
@@ -40,6 +40,13 @@ body {
     radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 28%),
     radial-gradient(circle at top right, rgba(29, 78, 216, 0.12), transparent 30%),
     linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+}
+
+:root[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 24%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 28%),
+    linear-gradient(180deg, #09111d 0%, #07111f 100%);
 }
 
 button,
@@ -731,8 +738,86 @@ button:disabled {
   gap: 18px;
 }
 
+.empty-state-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.empty-state-actions span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .print-report {
   display: none;
+}
+
+:root[data-theme="dark"] .hero-metrics div,
+:root[data-theme="dark"] .ghost-button,
+:root[data-theme="dark"] .report-stat,
+:root[data-theme="dark"] .coach-item,
+:root[data-theme="dark"] .merchant-item,
+:root[data-theme="dark"] .highlight-card,
+:root[data-theme="dark"] .category-chip,
+:root[data-theme="dark"] .row,
+:root[data-theme="dark"] .empty-list div {
+  background: rgba(17, 28, 48, 0.88);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+:root[data-theme="dark"] .file {
+  background: linear-gradient(180deg, rgba(17, 28, 48, 0.96), rgba(12, 22, 38, 0.96));
+  border-color: rgba(124, 180, 255, 0.28);
+}
+
+:root[data-theme="dark"] .file:hover,
+:root[data-theme="dark"] .file.drag-active {
+  border-color: rgba(124, 180, 255, 0.56);
+  box-shadow: 0 18px 30px rgba(8, 15, 28, 0.45);
+}
+
+:root[data-theme="dark"] .file-icon {
+  background: linear-gradient(135deg, rgba(124, 180, 255, 0.24), rgba(89, 224, 194, 0.16));
+  color: #dbeafe;
+}
+
+:root[data-theme="dark"] .spotlight {
+  background: linear-gradient(180deg, rgba(26, 42, 70, 0.96), rgba(17, 28, 48, 0.96));
+  border-color: rgba(124, 180, 255, 0.14);
+}
+
+:root[data-theme="dark"] .spotlight.alt {
+  background: linear-gradient(180deg, rgba(15, 64, 66, 0.92), rgba(17, 28, 48, 0.96));
+}
+
+:root[data-theme="dark"] .summary-callout {
+  background: linear-gradient(135deg, rgba(25, 39, 64, 0.92), rgba(16, 31, 53, 0.92));
+}
+
+:root[data-theme="dark"] .assistant-badge {
+  background: rgba(124, 180, 255, 0.14);
+  color: #dbeafe;
+}
+
+:root[data-theme="dark"] .category-detail,
+:root[data-theme="dark"] .trend-mini {
+  background: linear-gradient(180deg, rgba(17, 28, 48, 0.96), rgba(11, 19, 32, 0.96));
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+:root[data-theme="dark"] .upload-card > button,
+:root[data-theme="dark"] .ghost-button.strong {
+  background: linear-gradient(135deg, #2563eb 0%, #0f766e 100%);
+}
+
+:root[data-theme="dark"] .success {
+  color: #7dd3fc;
+}
+
+:root[data-theme="dark"] .row.head {
+  color: #d8e3f2;
 }
 
 .empty-state h2 {
@@ -804,6 +889,11 @@ button:disabled {
 
   .category-chip-head em {
     grid-column: 2;
+  }
+
+  .empty-state-actions {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

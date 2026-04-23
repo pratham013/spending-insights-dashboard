@@ -581,19 +581,15 @@ export default function App() {
             <div>
               <h2>Upload a CSV to unlock the interactive experience</h2>
               <p>
-                Once data is loaded, the dashboard adds category spotlights, anomaly callouts, guided habit
-                coaching, and forecasting context.
+                Upload your own bank export or load the demo dataset to explore category spotlights,
+                anomaly callouts, habit coaching, and forecasting in one polished dashboard.
               </p>
             </div>
-            <div className="empty-list">
-              <div>
-                <strong>What you can demo</strong>
-                <span>Data cleaning, analytics, forecasting, anomaly detection, and UX storytelling</span>
-              </div>
-              <div>
-                <strong>What recruiters will notice</strong>
-                <span>Real-world inputs, modern charts, and thoughtful decision-support UI</span>
-              </div>
+            <div className="empty-state-actions">
+              <button type="button" className="ghost-button strong" onClick={handleSampleDemo} disabled={loading}>
+                {loading ? "Loading demo..." : "Try demo data"}
+              </button>
+              <span>Best results come from CSVs with `date`, `amount`, `description`, and `category` fields.</span>
             </div>
           </section>
         )}
