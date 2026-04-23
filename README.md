@@ -1,6 +1,6 @@
 # Spending Insights Dashboard
 
-Spending Insights Dashboard is a portfolio-ready full-stack project that turns raw bank transaction CSVs into a polished analytics experience. Users can upload their spending history and instantly explore category breakdowns, monthly trends, anomaly detection, forecasting, and AI-style habit coaching.
+Spending Insights Dashboard is a ready full-stack project that turns raw bank transaction CSVs into a polished analytics experience. Users can upload their spending history and instantly explore category breakdowns, monthly trends, anomaly detection, forecasting, and AI-style habit coaching.
 
 ## Highlights
 - CSV ingestion and cleanup for real transaction exports
