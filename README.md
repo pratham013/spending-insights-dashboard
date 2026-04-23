@@ -15,18 +15,26 @@ Spending Insights Dashboard is a ready full-stack project that turns raw bank tr
 
 ## Run locally
 
-### 1. Start the backend
+### 1. Clone the repository
 ```bash
-cd "/Users/pratham/Documents/New project"
-python3 -m venv .venv
+git clone https://github.com/pratham013/spending-insights-dashboard.git
+cd spending-insights-dashboard
+```
+
+### 2. Start the backend
+```bash
+conda deactivate 2>/dev/null || true
+python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r backend/requirements.txt
 uvicorn backend.app.main:app --reload
 ```
 
-### 2. Start the frontend
+If `python3.12` is not installed, use `python3` instead, but Python 3.12 is the recommended version for the smoothest setup.
+
+### 3. Start the frontend
 ```bash
-cd "/Users/pratham/Documents/New project/frontend"
+cd frontend
 npm install
 npm run dev
 ```
@@ -52,3 +60,21 @@ If a file contains both positive and negative values, negative amounts are treat
 ## Notes
 - If `scikit-learn` is unavailable, the backend falls back to statistical anomaly detection and a linear trend forecast
 - To change backend CORS behavior, set `CORS_ORIGINS` as a comma-separated environment variable
+- The project virtual environment is created at the repository root as `.venv`, not inside `backend/`
+
+## Troubleshooting
+
+### `ImportError: cannot import name 'PickleBuffer' from 'pickle'`
+This usually means the active shell is mixing a Conda Python runtime with the virtual environment interpreter.
+
+Use this fix:
+```bash
+conda deactivate
+rm -rf .venv
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r backend/requirements.txt
+uvicorn backend.app.main:app --reload
+```
+
+If you do not have Python 3.12 installed, install it first or use a clean non-Conda Python interpreter.
